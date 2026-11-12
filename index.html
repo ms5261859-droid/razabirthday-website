@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: #100d16;
+    color: white;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, #57334c 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 80%, #35284e 0%, transparent 45%),
+      #100d16;
+    z-index: -1;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.card {
+    width: 100%;
+    max-width: 650px;
+    padding: 55px 35px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.07);
+    backdrop-filter: blur(18px);
+    border-radius: 25px;
+    box-shadow: 0 25px 80px rgba(0,0,0,.3);
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.small-title {
+    color: #e8b7cb;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: clamp(36px, 8vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #f0b8d0;
+}
+
+p {
+    color: #d4cbd5;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 35px;
+    min-height: 55px;
+}
+
+button {
+    border: none;
+    padding: 15px 38px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.yes {
+    color: #271725;
+    background: linear-gradient(135deg, #f4c6d8, #e5a4c2);
+}
+
+.yes:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px #e5a4c255;
+}
+
+.no {
+    color: white;
+    background: #423443;
+    border: 1px solid #725b70;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#surprise {
+    animation: appear 1s ease;
+}
+
+.greeting {
+    font-size: clamp(38px, 8vw, 60px);
+    color: #f0b8d0;
+    margin: 15px 0;
+}
+
+.cake {
+    font-size: 85px;
+    margin: 20px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.photo {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e8b7cb;
+    margin: 25px auto;
+    display: block;
+    box-shadow: 0 0 35px #e8b7cb44;
+}
+
+.message {
+    margin: 25px auto;
+    max-width: 470px;
+    padding: 22px;
+    background: rgba(255,255,255,.06);
+    border-radius: 15px;
+    border-left: 3px solid #e8b7cb;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #e8b7cb;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.footer {
+    color: #938596;
+    font-size: 11px;
+    margin-top: 35px;
+    letter-spacing: 2px;
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.piece {
+    position: absolute;
+    top: -20px;
+    width: 9px;
+    height: 13px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .card { padding: 40px 20px; }
+    .buttons { gap: 10px; }
+    button { padding: 14px 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div id="confetti"></div>
+
+<main class="container">
+
+    <!-- FIRST SCREEN -->
+    <section class="card" id="welcome">
+
+        <div class="small-title">A little surprise for you</div>
+
+        <h1>Something <span>Special</span><br>is waiting...</h1>
+
+        <p>
+            Today is not an ordinary day.<br>
+            Someone deserves a little extra happiness.
+        </p>
+
+        <h2 style="margin-top:30px; color:#f0b8d0;">
+            Are you ready for your surprise?
+        </h2>
+
+        <div class="buttons" id="buttonArea">
+            <button class="yes" onclick="openSurprise()">
+                YES, SHOW ME!
+            </button>
+
+            <button class="no" id="noButton">
+                NO
+            </button>
+        </div>
+
+        <div class="footer">MADE WITH CARE • A SPECIAL DAY</div>
+
+    </section>
+
+    <!-- BIRTHDAY SURPRISE -->
+    <section class="card hidden" id="surprise">
+
+        <div class="small-title">Today is all about you</div>
+
+        <div class="cake">🎂</div>
+
+        <h1 class="greeting">
+            Happy Birthday!
+        </h1>
+
+        <h2 id="personName"
+            style="font-size:35px; margin-bottom:15px;">
+            Your Special Name
+        </h2>
+
+        <p>
+            A beautiful day for a beautiful new chapter.
+        </p>
+
+        <!-- Add a photo named birthday.jpg in the same folder -->
+        <img
+            src="birthday.jpg"
+            class="photo"
+            alt="Birthday memory"
+            onerror="this.style.display='none'"
+        >
+
+        <div class="message">
+            <p>
+                May your new year of life bring you
+                happiness, success, peace and countless
+                beautiful memories.
+
+                May all your dreams come closer,
+                and may every day give you a reason to smile.
+
+                Keep shining and never stop being yourself.
+            </p>
+        </div>
+
+        <h2 style="color:#f0b8d0; margin-top:25px;">
+            Enjoy Your Special Day! ✨
+        </h2>
+
+        <div class="signature">
+            Best Wishes ❤️
+        </div>
+
+        <div class="footer">
+            A SMALL GIFT WITH BIG WISHES
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+
+// Playful NO button
+const noButton = document.getElementById("noButton");
+const buttonArea = document.getElementById("buttonArea");
+
+noButton.addEventListener("mouseenter", moveButton);
+
+noButton.addEventListener("click", moveButton);
+
+function moveButton() {
+    const area = buttonArea.getBoundingClientRect();
+
+    const maxX = Math.max(0, area.width - noButton.offsetWidth);
+    const maxY = 90;
+
+    noButton.style.position = "relative";
+    noButton.style.left =
+        (Math.random() * maxX - maxX / 2) + "px";
+
+    noButton.style.top =
+        (Math.random() * maxY - maxY / 2) + "px";
+}
+
+// Open birthday surprise
+function openSurprise() {
+
+    document.getElementById("welcome")
+        .classList.add("hidden");
+
+    document.getElementById("surprise")
+        .classList.remove("hidden");
+
+    createConfetti();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+// Confetti animation
+function createConfetti() {
+
+    const container = document.getElementById("confetti");
+
+    const colors = [
+        "#f4c6d8",
+        "#e8b7cb",
+        "#d9b5f5",
+        "#ffffff",
+        "#e8c77b"
+    ];
+
+    for (let i = 0; i < 100; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "piece";
+
+        piece.style.left = Math.random() * 100 + "vw";
+
+        piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 4) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        container.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 7000);
+    }
+}
+
+</script>
+
+</body>
+</html>
