@@ -4,414 +4,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#170b29">
-<title>For My Zoro ❤️</title>
-
+<title>Happy Birthday Jaanan ❤️</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap');
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
-  background:#11091d;
-  color:white;
-  font-family:'Poppins',sans-serif;
-  overflow:hidden;
-  min-height:100vh;
+  background:#09050d;color:#fff;
+  font-family:Georgia,serif;overflow:hidden;
 }
-
-#stars{
-  position:fixed;inset:0;pointer-events:none;
-  background-image:
-  radial-gradient(white 1px,transparent 1px),
-  radial-gradient(#e9a6ff 1px,transparent 1px);
-  background-size:65px 65px,110px 110px;
-  background-position:0 0,30px 40px;
-  opacity:.35;
-  animation:stars 30s linear infinite;
+.page{
+  min-height:100vh;width:100%;
+  display:none;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;padding:28px;
+  background:radial-gradient(circle at top,#42142e,#09050d 70%);
+  animation:appear 1.2s ease;
 }
-
-@keyframes stars{to{background-position:300px 400px,200px 300px}}
-
-.heart{
- position:fixed;bottom:-30px;left:var(--x);
- color:#ff72b6;font-size:var(--s);
- animation:float var(--t) linear forwards;
- pointer-events:none;
- z-index:5;
+.page.active{display:flex}
+@keyframes appear{
+  from{opacity:0;transform:scale(.94) rotateX(8deg)}
+  to{opacity:1;transform:scale(1) rotateX(0)}
 }
-@keyframes float{
- to{transform:translateY(-110vh) rotate(360deg);opacity:0}
-}
-
-.screen{
- position:absolute;inset:0;
- display:none;
- align-items:center;justify-content:center;
- flex-direction:column;
- text-align:center;
- padding:28px 22px;
- overflow-y:auto;
- background:radial-gradient(ellipse at top,#351342 0%,#190d29 48%,#100817 100%);
-}
-
-.screen.active{
- display:flex;
- animation:enter .8s cubic-bezier(.2,.8,.2,1);
-}
-.screen.exit{
- animation:leave .45s ease forwards;
-}
-@keyframes enter{
- from{opacity:0;transform:perspective(900px) rotateY(35deg) scale(.9)}
- to{opacity:1;transform:perspective(900px) rotateY(0) scale(1)}
-}
-@keyframes leave{
- to{opacity:0;transform:perspective(900px) rotateY(-35deg) scale(.9)}
-}
-
-h1{
- font-family:'Playfair Display',serif;
- font-size:clamp(35px,9vw,58px);
- line-height:1.2;
- color:#ffd5ec;
- text-shadow:0 0 25px #f45bab80;
-}
-h2{
- font-family:'Playfair Display',serif;
- font-size:clamp(27px,7vw,39px);
- color:#ffb6db;
- margin-bottom:18px;
-}
-p{
- color:#f1d9ed;
- font-size:15px;
- line-height:1.9;
- max-width:480px;
- margin:14px auto;
-}
-.small{
- color:#d8b9d8;font-size:12px;letter-spacing:3px;
- margin-bottom:20px;
-}
+h1{font-size:clamp(2.3rem,8vw,5rem);color:#ffb4d0;margin-bottom:20px}
+p{font-size:clamp(1rem,3vw,1.35rem);line-height:1.8;max-width:700px}
 button{
- border:1px solid #ffb2d9;
- background:linear-gradient(120deg,#e84e9a,#963dba);
- color:white;
- padding:15px 26px;
- border-radius:40px;
- font-size:14px;
- font-family:inherit;
- cursor:pointer;
- margin:12px 5px;
- box-shadow:0 0 25px #e84e9a45;
- transition:.3s;
+  border:1px solid #ff9cbe;background:#b82d65;color:white;
+  padding:14px 25px;border-radius:30px;margin:15px 7px;
+  font-size:16px;cursor:pointer;
 }
-button:active{transform:scale(.94)}
-button:hover{box-shadow:0 0 35px #f78bc8}
-.secondary{background:transparent}
-.progress{
- position:fixed;top:17px;left:50%;
- transform:translateX(-50%);
- font-size:11px;letter-spacing:3px;
- color:#eab8dc;z-index:10;
-}
-.progressbar{
- position:fixed;top:0;left:0;height:3px;
- background:#ff80c3;width:0;z-index:10;
- transition:.5s;
-}
-.envelope{
- font-size:95px;cursor:pointer;
- animation:pulse 1.5s infinite;
-}
-@keyframes pulse{
- 50%{transform:scale(1.1);filter:drop-shadow(0 0 20px #ff80c3)}
-}
-.letter{
- background:#fff0f6;color:#64254b;
- padding:25px;border-radius:15px;
- max-width:440px;width:100%;
- line-height:2;font-family:'Playfair Display',serif;
- display:none;text-align:left;
- box-shadow:0 0 40px #ff8ac355;
-}
-.letter p{color:#64254b;font-family:inherit}
-
-.gallery{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:12px;width:100%;max-width:440px;
- margin:15px auto;
-}
+button:hover{background:#e34d88;transform:scale(1.05)}
+.heart{font-size:65px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.small{color:#f4b9d0;font-size:14px;margin-top:15px}
 .photo{
- background:#fff;padding:8px 8px 15px;
- border-radius:5px;
- transform:rotate(var(--r));
- box-shadow:0 5px 20px #0008;
+  width:min(80vw,300px);height:300px;object-fit:cover;
+  border:3px solid #ff9cbe;border-radius:20px;margin:15px;
 }
-.photo img{
- width:100%;height:145px;object-fit:cover;
- display:block;background:#3b2549;
+#musicControl{
+  position:fixed;top:15px;right:15px;z-index:20;
+  background:#8e2250;
 }
-.photo span{
- color:#74345b;font-family:'Playfair Display',serif;
- font-size:13px;display:block;margin-top:9px;
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:5}
+.floating{
+  position:absolute;bottom:-30px;animation:floatUp 7s linear forwards;
 }
-.bigheart{font-size:85px;animation:pulse 1.4s infinite}
-.gift{font-size:100px;cursor:pointer;animation:pulse 1.5s infinite}
-.cake{font-size:100px;animation:pulse 1.3s infinite}
-.message{
- background:#ffffff12;border:1px solid #ffffff20;
- padding:22px;border-radius:18px;
- max-width:440px;width:100%;
- backdrop-filter:blur(10px);
+@keyframes floatUp{
+  to{transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
-#musicBtn{
- position:fixed;right:12px;top:12px;
- padding:9px 13px;font-size:12px;
- z-index:20;margin:0;
-}
-#nextReason{min-height:70px}
-@media(max-width:380px){
- .screen{padding:24px 15px}
- .photo img{height:115px}
- button{padding:13px 20px}
-}
+input{margin:10px;color:white;max-width:90%}
 </style>
 </head>
-
 <body>
-<div id="stars"></div>
-<div class="progressbar" id="bar"></div>
-<div class="progress" id="progress">01 / 08</div>
 
-<button id="musicBtn" onclick="toggleMusic()">♫ Music OFF</button>
+<button id="musicControl" onclick="toggleMusic()">♫ Play Music</button>
 <audio id="music" loop>
   <source src="music/song.mp3" type="audio/mpeg">
 </audio>
+<div id="hearts"></div>
 
-<!-- SCREEN 1 -->
-<section class="screen active" id="s1">
- <div class="small">A LITTLE WORLD MADE FOR YOU</div>
- <div class="bigheart">💗</div>
- <h1>Hey Nuralia...</h1>
- <p>Someone has prepared a little surprise for someone very special.</p>
- <p>And that someone is YOU. ❤️</p>
- <button onclick="next(2)">Open Your Surprise ✨</button>
+<section class="page active">
+  <div class="heart">❤️</div>
+  <h1>For My Jaanan</h1>
+  <p>A little world made only for you...</p>
+  <p class="small">From your Zoro, with endless love</p>
+  <button onclick="nextPage()">Open Your Surprise ✨</button>
 </section>
 
-<!-- SCREEN 2 -->
-<section class="screen" id="s2">
- <div class="small">WELCOME TO YOUR UNIVERSE</div>
- <h1>Welcome,<br>My Zoro ❤️</h1>
- <p>Today, the whole little universe is celebrating you.</p>
- <p>Every little surprise here is made with love.</p>
- <button onclick="next(3)">Let's Begin 💕</button>
+<section class="page">
+  <h1>Happy Birthday!</h1>
+  <p>17 November — the day my favourite person came into this world.</p>
+  <div class="heart">🎂</div>
+  <p>Happy Birthday, Jaanan. You make my world beautiful.</p>
+  <button onclick="nextPage()">Continue ❤️</button>
 </section>
 
-<!-- SCREEN 3 -->
-<section class="screen" id="s3">
- <div class="small">A VERY SPECIAL DAY</div>
- <div style="font-size:80px">🎂</div>
- <h1>17 November</h1>
- <h2>The Day My Favourite Person Was Born</h2>
- <p>2000 — The world became a little more beautiful.</p>
- <button onclick="next(4)">A Letter For You 💌</button>
+<section class="page">
+  <h1>My Zoro & Jaanan</h1>
+  <p>In a world full of people, my heart found its home in you.</p>
+  <p>You are my favourite hello and my hardest goodbye.</p>
+  <button onclick="nextPage()">Next Surprise 💌</button>
 </section>
 
-<!-- SCREEN 4 -->
-<section class="screen" id="s4">
- <div class="small">SOMETHING FROM MY HEART</div>
- <h2>A Secret Letter</h2>
- <div class="envelope" onclick="openLetter()">💌</div>
- <p id="letterHint">Tap the envelope to open your letter.</p>
- <div class="letter" id="letter">
-  <h2>My Dearest Nuralia ❤️</h2>
+<section class="page">
+  <h1>Our Memories</h1>
+  <p>These two pictures will always have a special place in my heart.</p>
+  <div>
+    <img class="photo" src="images/photo1.jpg" alt="Our first memory">
+    <img class="photo" src="images/photo2.jpg" alt="Our second memory">
+  </div>
+  <p class="small">Upload your photos to the images folder on GitHub.</p>
+  <button onclick="nextPage()">Next ❤️</button>
+</section>
+
+<section class="page">
+  <h1>A Letter For You</h1>
   <p>
-   I don't know how to put all my feelings into words,
-   but I want you to know how special you are to me.
-   <br><br>
-   Your smile makes ordinary days beautiful.
-   Your presence makes everything feel brighter.
-   <br><br>
-   My Zoro, My Jaanan, you deserve every beautiful
-   thing this world has to offer.
-   <br><br>
-   Happy Birthday, my favourite person.
-   <br><br>
-   With endless love. ❤️
+    My dearest Jaanan,<br><br>
+    I may not always find the perfect words to explain my feelings,
+    but I hope you always know how special you are to me.
+    Thank you for being you. I wish your life is filled with
+    happiness, peace, laughter and every beautiful thing you deserve.
+    <br><br>
+    Forever yours,<br>
+    Your Zoro ❤️
   </p>
- </div>
- <button onclick="next(5)">Our Memories 📸</button>
+  <button onclick="nextPage()">One More Thing 💗</button>
 </section>
 
-<!-- SCREEN 5 -->
-<section class="screen" id="s5">
- <div class="small">LITTLE MOMENTS, BIG MEMORIES</div>
- <h2>Our Beautiful Memories</h2>
- <p>Every picture has a little story. ❤️</p>
- <div class="gallery">
-  <div class="photo" style="--r:-3deg">
-   <img src="images/photo1.jpg" alt="Memory 1">
-   <span>My Favourite Smile ❤️</span>
-  </div>
-  <div class="photo" style="--r:3deg">
-   <img src="images/photo2.jpg" alt="Memory 2">
-   <span>Beautiful Moments</span>
-  </div>
-  <div class="photo" style="--r:2deg">
-   <img src="images/photo3.jpg" alt="Memory 3">
-   <span>My Zoro 💗</span>
-  </div>
-  <div class="photo" style="--r:-2deg">
-   <img src="images/photo4.jpg" alt="Memory 4">
-   <span>Forever Special</span>
-  </div>
- </div>
- <button onclick="next(6)">One More Surprise 💕</button>
+<section class="page">
+  <h1>Why I Love You</h1>
+  <p>❤️ Your beautiful smile</p>
+  <p>❤️ The way you make ordinary days special</p>
+  <p>❤️ Your kindness and your heart</p>
+  <p>❤️ The happiness I feel just thinking of you</p>
+  <p>❤️ Simply because you are you</p>
+  <button onclick="nextPage()">Open Your Gift 🎁</button>
 </section>
 
-<!-- SCREEN 6 -->
-<section class="screen" id="s6">
- <div class="small">A LITTLE SECRET</div>
- <h2>Reasons Why I Love You</h2>
- <div class="bigheart">💖</div>
- <div class="message" id="nextReason">
-  Tap the heart button to discover a reason.
- </div>
- <button onclick="reason()">Reveal A Reason ❤️</button>
- <button onclick="next(7)">Next Surprise 🎁</button>
+<section class="page">
+  <div class="heart">🎁</div>
+  <h1>Your Special Gift</h1>
+  <p>My biggest gift is that I get to make more beautiful memories with you.</p>
+  <button onclick="revealGift()">Open Gift ❤️</button>
+  <p id="giftMessage"></p>
+  <button onclick="nextPage()">Final Surprise ✨</button>
 </section>
 
-<!-- SCREEN 7 -->
-<section class="screen" id="s7">
- <div class="small">A GIFT FROM MY HEART</div>
- <h2>Something Special For You</h2>
- <div class="gift" onclick="openGift()">🎁</div>
- <p id="giftText">Tap the gift box to unwrap your surprise.</p>
- <button onclick="next(8)">The Final Surprise ✨</button>
-</section>
-
-<!-- SCREEN 8 -->
-<section class="screen" id="s8">
- <div class="small">TODAY IS ALL ABOUT YOU</div>
- <div class="cake">🎂</div>
- <h1>Happy Birthday<br>My Zoro! ❤️</h1>
- <h2>My Jaanan 💗</h2>
- <div class="message">
-  <p>
-   Among billions of stars, you will always be
-   my favourite one.
-  </p>
-  <p>
-   May your life always be filled with happiness,
-   laughter, love and beautiful moments.
-  </p>
-  <h2>Forever Special ❤️</h2>
-  <p>Made with endless love, just for you.</p>
- </div>
- <button onclick="celebrate()">Celebrate Again 🎉</button>
+<section class="page">
+  <div class="heart">💖</div>
+  <h1>Happy Birthday, Jaanan!</h1>
+  <p>May your smile never fade and may all your dreams come true.</p>
+  <p>Today, tomorrow and always — you are special to me.</p>
+  <h1>Forever Yours, Zoro ❤️</h1>
+  <button onclick="restart()">Experience Again ↻</button>
 </section>
 
 <script>
-let current=1;
-const total=8;
+let current=0;
+const pages=document.querySelectorAll(".page");
+const music=document.getElementById("music");
+const musicButton=document.getElementById("musicControl");
 
-function next(n){
- const old=document.getElementById('s'+current);
- old.classList.add('exit');
-
- setTimeout(()=>{
-  old.classList.remove('active','exit');
-  current=n;
-  document.getElementById('s'+current).classList.add('active');
-  document.getElementById('progress').textContent=
-    String(current).padStart(2,'0')+' / '+String(total).padStart(2,'0');
-  document.getElementById('bar').style.width=
-    (current/total*100)+'%';
-  window.scrollTo(0,0);
- },350);
+function showPage(index){
+  pages.forEach(page=>page.classList.remove("active"));
+  pages[index].classList.add("active");
+  current=index;
+  if(index===pages.length-1) fireworks();
 }
-
-function openLetter(){
- document.getElementById('letter').style.display='block';
- document.getElementById('letterHint').style.display='none';
+function nextPage(){
+  if(current<pages.length-1)showPage(current+1);
 }
-
-const reasons=[
- "Your beautiful smile makes my day. ❤️",
- "Your cute little expressions. 🥹",
- "The happiness you bring into my life. 💗",
- "The way you make ordinary moments special. ✨",
- "Simply because you are YOU, Nuralia. ❤️",
- "You are my favourite person. 🌹"
-];
-let reasonIndex=0;
-
-function reason(){
- const box=document.getElementById('nextReason');
- if(reasonIndex<reasons.length){
-  box.textContent=reasons[reasonIndex++];
- }else{
-  box.textContent="And a million more reasons... I love you! ❤️";
- }
- box.animate([
-  {opacity:0,transform:'scale(.8)'},
-  {opacity:1,transform:'scale(1)'}
- ],{duration:500});
+function restart(){
+  showPage(0);
 }
-
-function openGift(){
- document.getElementById('giftText').innerHTML=
- "Surprise, My Zoro! ❤️<br><br>If I could gift you one thing, it would be the ability to see yourself through my eyes. Then you would understand how precious you are to me. 💗";
- confetti();
-}
-
-function confetti(){
- for(let i=0;i<35;i++){
-  let el=document.createElement('div');
-  el.textContent=['💗','✨','❤️','🎉'][Math.floor(Math.random()*4)];
-  el.className='heart';
-  el.style.setProperty('--x',Math.random()*100+'vw');
-  el.style.setProperty('--s',(15+Math.random()*22)+'px');
-  el.style.setProperty('--t',(3+Math.random()*3)+'s');
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(),6500);
- }
-}
-
-function celebrate(){
- confetti();
- next(1);
-}
-
-setInterval(()=>{
- if(Math.random()>.45){
-  let el=document.createElement('div');
-  el.className='heart';
-  el.textContent='♥';
-  el.style.setProperty('--x',Math.random()*100+'vw');
-  el.style.setProperty('--s',(12+Math.random()*20)+'px');
-  el.style.setProperty('--t',(5+Math.random()*5)+'s');
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(),10000);
- }
-},1200);
-
-let playing=false;
 function toggleMusic(){
- const audio=document.getElementById('music');
- if(!playing){
-  audio.play().then(()=>{
-   playing=true;
-   document.getElementById('musicBtn').textContent='♫ Music ON';
-  }).catch(()=>alert('Please add music/song.mp3 to your GitHub project.'));
- }else{
-  audio.pause();
-  playing=false;
-  document.getElementById('musicBtn').textContent='♫ Music OFF';
- }
+  if(music.paused){
+    music.play().then(()=>{
+      musicButton.textContent="♫ Pause Music";
+    }).catch(()=>{
+      alert("Music file music/song.mp3 upload karo aur dobara Play dabao.");
+    });
+  }else{
+    music.pause();
+    musicButton.textContent="♫ Play Music";
+  }
+}
+function revealGift(){
+  document.getElementById("giftMessage").textContent=
+  "Your gift is a promise: I will keep choosing you, every single day. ❤️";
+}
+function floatingHeart(){
+  const heart=document.createElement("span");
+  heart.className="floating";
+  heart.textContent=["❤️","💗","💕","✨"][Math.floor(Math.random()*4)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(18+Math.random()*25)+"px";
+  document.getElementById("hearts").appendChild(heart);
+  setTimeout(()=>heart.remove(),7000);
+}
+setInterval(floatingHeart,650);
+
+function fireworks(){
+  for(let i=0;i<35;i++){
+    setTimeout(floatingHeart,i*90);
+  }
 }
 </script>
 </body>
