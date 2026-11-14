@@ -1,0 +1,1 @@
+After the one-time setup, upload photo1.jpg and photo2.jpg into this folder.

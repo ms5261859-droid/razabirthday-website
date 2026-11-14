@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10091d">
+<title>For Nuralia — My Zoro ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#10091d;--pink:#ff8cbd;--rose:#d94f91;--gold:#f4d49a;--lav:#c9a6ff;--white:#fff8fc}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 18% 12%,#54234f99,transparent 42%),radial-gradient(ellipse at 82% 82%,#30205d99,transparent 45%),linear-gradient(145deg,#160d27,#090711 75%);z-index:-5}
+button,input{font:inherit}
+button{cursor:pointer}
+#ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+#ambient:before,#ambient:after{content:"";position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(80px);opacity:.14;animation:orb 16s ease-in-out infinite alternate}
+#ambient:before{background:#ef5da8;top:-35vmax;left:-20vmax}
+#ambient:after{background:#8055d9;right:-35vmax;bottom:-35vmax;animation-delay:-7s}
+@keyframes orb{to{transform:translate(18vw,15vh) scale(1.25)}}
+#stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,#fff 98%,transparent),radial-gradient(1px 1px at 70% 30%,#ffd9ed 98%,transparent),radial-gradient(1px 1px at 40% 80%,#fff 98%,transparent),radial-gradient(2px 2px at 88% 75%,#f7c8e2 98%,transparent);background-size:190px 170px,240px 220px,300px 260px,360px 320px;opacity:.55;animation:starDrift 55s linear infinite}
+@keyframes starDrift{to{background-position:190px 170px,-240px 220px,300px -260px,-360px 320px}}
+#grain{position:absolute;inset:0;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.topline{position:fixed;top:0;left:0;right:0;height:3px;background:#ffffff12;z-index:30}
+#progress{height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));box-shadow:0 0 14px var(--pink);transition:width .7s}
+.topbar{position:fixed;top:16px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:center;z-index:30;pointer-events:none}
+.brand,.music{pointer-events:auto}
+.brand{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#f3c8df}
+.music{border:1px solid #ffffff25;background:#ffffff0c;color:#ffe7f3;border-radius:30px;padding:9px 13px;font-size:11px;backdrop-filter:blur(12px)}
+.music .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#aaa;margin-right:6px}
+.music.playing .dot{background:#8cffc0;box-shadow:0 0 9px #8cffc0}
+#deck{position:relative;width:100%;height:100%;perspective:1400px}
+.scene{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:76px 22px 36px;overflow-y:auto;overscroll-behavior:contain}
+.scene.active{display:flex;animation:sceneIn .9s cubic-bezier(.2,.8,.2,1) both}
+.scene.leaving{display:flex;animation:sceneOut .55s ease both;pointer-events:none}
+@keyframes sceneIn{0%{opacity:0;transform:rotateY(22deg) translateX(7%) scale(.94);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes sceneOut{to{opacity:0;transform:rotateY(-18deg) translateX(-6%) scale(.96);filter:blur(7px)}}
+.content{width:min(100%,570px);margin:auto;position:relative}
+.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#e8b9d3;margin-bottom:18px}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500;margin:0}
+h1{font-size:clamp(43px,11vw,78px);line-height:1.03;letter-spacing:-.04em}
+h2{font-size:clamp(31px,8vw,49px);line-height:1.12}
+h3{font-size:25px;color:#ffe0ef}
+.grad{background:linear-gradient(110deg,#fff5fb 10%,#ffadd2 48%,#f5dca9 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.copy{max-width:450px;margin:18px auto 0;color:#e6d4e5;font-size:14px;line-height:1.9}
+.muted{color:#bfaec8;font-size:12px;line-height:1.8}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{border:1px solid #ffb4d7;background:linear-gradient(115deg,#d94f91,#8848b6);color:white;border-radius:99px;padding:14px 23px;font-weight:600;font-size:12px;letter-spacing:.04em;box-shadow:0 9px 35px #d94f9140,inset 0 1px #ffffff45;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px #d94f9160}
+.btn.ghost{background:#ffffff0b;border-color:#ffffff35;box-shadow:none}
+.btn:active{transform:scale(.97)}
+.hero-heart{width:145px;height:145px;margin:0 auto 26px;display:grid;place-items:center;position:relative;filter:drop-shadow(0 0 24px #ff65ad88);animation:heartFloat 4s ease-in-out infinite}
+.hero-heart:before{content:"";position:absolute;inset:14px;border:1px solid #ffb9d94d;border-radius:50%;animation:ring 4s linear infinite}
+.hero-heart:after{content:"";position:absolute;inset:0;border:1px solid #ffb9d933;border-radius:50%;animation:ring 4s linear infinite reverse}
+.hero-heart span{font-size:77px;text-shadow:0 0 25px #ff4e9c;animation:heartbeat 2s ease-in-out infinite}
+@keyframes heartFloat{50%{transform:translateY(-10px)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.12)}22%{transform:scale(1)}}
+@keyframes ring{to{transform:rotate(360deg) scale(1.13);border-color:#f9d3e777}}
+.orbit{position:absolute;width:205px;height:205px;left:50%;top:50%;transform:translate(-50%,-50%);border:1px dashed #f7c3e344;border-radius:50%;animation:spin 24s linear infinite}
+.orbit:after{content:"✦";position:absolute;top:13px;left:27px;color:var(--gold);font-size:17px}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.date{font-family:"Playfair Display",serif;font-size:clamp(48px,13vw,82px);color:#ffe0ef;text-shadow:0 0 35px #ff8cbd55;margin:14px 0}
+.date small{display:block;font:10px "DM Sans";letter-spacing:.35em;color:#e9c8de;margin-top:8px}
+.glass{background:linear-gradient(145deg,#ffffff15,#ffffff06);border:1px solid #ffffff25;border-radius:24px;padding:24px;box-shadow:0 25px 80px #0005,inset 0 1px #ffffff18;backdrop-filter:blur(18px)}
+.envelope{width:130px;height:92px;margin:28px auto 18px;position:relative;cursor:pointer;filter:drop-shadow(0 12px 25px #ec67a855);transition:transform .4s}
+.envelope:hover{transform:translateY(-7px) rotate(-2deg)}
+.env-body{position:absolute;inset:0;background:linear-gradient(135deg,#f4a6ca,#b85a9b);border-radius:8px}
+.env-flap{position:absolute;inset:0;background:#f8c1da;clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .7s;z-index:2}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.env-heart{position:absolute;z-index:3;left:50%;top:40%;transform:translate(-50%,-50%);font-size:26px}
+.letter{display:none;text-align:left;margin:18px auto 0;max-width:460px;background:#fff4f8;color:#51223f;border-radius:16px;padding:23px;line-height:1.85;box-shadow:0 18px 55px #0005}
+.letter.show{display:block;animation:letterUp .7s ease both}
+.letter p{color:#65334f;font-size:13px}
+@keyframes letterUp{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;max-width:430px;margin:25px auto 0}
+.photo-card{padding:9px 9px 14px;background:#fff9f5;border-radius:8px;color:#70435c;box-shadow:0 18px 45px #0006;transform:rotate(-3deg);animation:photoReveal .9s cubic-bezier(.2,.8,.2,1) both}
+.photo-card:nth-child(2){transform:rotate(3deg);animation-delay:.18s}
+.photo-card img{display:block;width:100%;height:clamp(150px,43vw,220px);object-fit:cover;background:#39243e;border-radius:3px}
+.photo-card span{display:block;font-family:"Playfair Display",serif;font-size:14px;padding-top:11px}
+@keyframes photoReveal{from{opacity:0;transform:translateY(35px) rotate(0) scale(.8)}to{opacity:1}}
+.reason-card{min-height:135px;display:grid;place-items:center;margin:22px auto;max-width:450px}
+.reason-text{font-family:"Playfair Display",serif;font-size:clamp(22px,6vw,30px);color:#ffe3ef;line-height:1.45}
+.gift-wrap{font-size:105px;display:inline-block;cursor:pointer;filter:drop-shadow(0 15px 28px #ec5caa77);animation:giftBob 2.8s ease-in-out infinite}
+@keyframes giftBob{50%{transform:translateY(-12px) rotate(4deg)}}
+.gift-wrap.open{animation:giftOpen .7s ease both}
+@keyframes giftOpen{35%{transform:rotate(-12deg) scale(1.25)}100%{transform:rotate(12deg) scale(.75);opacity:.25}}
+.fireworks{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.burst{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px 3px var(--pink);animation:burst 1.4s ease-out forwards}
+@keyframes burst{to{transform:translate(var(--dx),var(--dy)) scale(.1);opacity:0}}
+.cake{font-size:82px;filter:drop-shadow(0 0 25px #ff83b8);animation:cakeIn 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cakeIn{from{transform:translateY(60px) scale(.5);opacity:0}to{transform:none;opacity:1}}
+.final-title{font-size:clamp(40px,10vw,70px);margin:14px 0}
+.footer-note{font-size:10px;color:#bca8c0;letter-spacing:.13em;margin-top:20px}
+#setup{position:fixed;inset:0;z-index:100;background:linear-gradient(145deg,#170c28,#090711);display:none;align-items:center;justify-content:center;padding:22px;overflow:auto}
+.setup-card{width:min(100%,520px);border:1px solid #ffffff27;background:#ffffff0d;border-radius:24px;padding:25px;box-shadow:0 25px 90px #0009}
+.uploads{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.upload{border:1px dashed #f0a9ce88;border-radius:15px;padding:12px;min-width:0}
+.upload label{display:block;font-size:12px;color:#ffd7e9;margin-bottom:9px}
+.upload input{width:100%;font-size:10px;color:#ead5e4}
+.preview{width:100%;height:115px;object-fit:cover;border-radius:9px;background:#302039;margin-top:10px;display:none}
+.notice{font-size:12px;line-height:1.75;color:#d9c5d8;background:#ffffff0a;padding:13px;border-radius:12px}
+.hidden{display:none!important}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#2a1837;border:1px solid #ffffff30;border-radius:20px;padding:11px 17px;font-size:12px;z-index:150;display:none;max-width:90%;text-align:center}
+@media(max-width:420px){.scene{padding:68px 17px 25px}.glass{padding:19px}.photo-grid{gap:10px}.photo-card{padding:7px 7px 11px}.photo-card span{font-size:12px}.uploads{gap:8px}.setup-card{padding:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="ambient"><div id="stars"></div><div id="grain"></div></div>
+<div class="topline"><div id="progress"></div></div>
+<div class="topbar"><div class="brand">A little universe · made for Nuralia</div><button class="music" id="musicBtn" type="button"><span class="dot"></span> MUSIC OFF</button></div>
+<audio id="bgMusic" loop preload="none"><source src="./music/song.mp3" type="audio/mpeg"></audio>
+<div id="deck">
+<section class="scene active" id="s1"><div class="content">
+ <div class="eyebrow">A secret invitation</div><div class="hero-heart"><div class="orbit"></div><span>♥</span></div>
+ <h1 class="grad">Hey, Nuralia.</h1><p class="copy">Somewhere between a thousand ordinary moments, someone became my favourite part of the universe.</p>
+ <div class="actions"><button class="btn" data-next="2">UNLOCK YOUR SURPRISE <span>✦</span></button></div>
+ <div class="footer-note">MADE WITH LOVE, JUST FOR YOU</div>
+</div></section>
+<section class="scene" id="s2"><div class="content">
+ <div class="eyebrow">Chapter 01 · Your little universe</div><h1 class="grad">Welcome home,<br>My Zoro.</h1>
+ <p class="copy">Tonight, every little sparkle has one job: to remind you how wonderfully special you are.</p>
+ <div class="actions"><button class="btn" data-next="3">LET THE MAGIC BEGIN →</button></div>
+</div></section>
+<section class="scene" id="s3"><div class="content">
+ <div class="eyebrow">Chapter 02 · The day the stars aligned</div><div class="date">17·11<small>NOVEMBER · 2000</small></div>
+ <h2 class="grad">The world got<br>a little brighter.</h2><p class="copy">The day my favourite person arrived in this world. And what a beautiful reason to celebrate.</p>
+ <div class="actions"><button class="btn" data-next="4">A LETTER FROM ME ✉</button></div>
+</div></section>
+<section class="scene" id="s4"><div class="content">
+ <div class="eyebrow">Chapter 03 · Open when you're ready</div><h2 class="grad">A little note<br>from my heart</h2>
+ <div class="envelope" id="envelope"><div class="env-body"></div><div class="env-flap"></div><div class="env-heart">♥</div></div>
+ <p class="muted" id="letterHint">Tap the envelope to open your letter</p>
+ <div class="letter" id="letter"><h3>My dearest Nuralia,</h3>
+ <p>I may not always find the perfect words, but I hope you never doubt how much you mean to me.</p>
+ <p>Your smile makes ordinary days feel special. Your presence brings a kind of happiness that is hard to explain and impossible to replace.</p>
+ <p>My Zoro, my Jaanan — I hope life gives you a thousand reasons to smile, today and every day.</p>
+ <p>Happy Birthday, beautiful. This little world is made just for you. ♥</p>
+ <p style="text-align:right;font-family:'Playfair Display',serif;font-style:italic">With all my love.</p></div>
+ <div class="actions"><button class="btn" data-next="5">TURN THE PAGE →</button></div>
+</div></section>
+<section class="scene" id="s5"><div class="content">
+ <div class="eyebrow">Chapter 04 · Two moments, one heart</div><h2 class="grad">Our little<br>memory gallery</h2>
+ <p class="muted">Some moments deserve their own little frame.</p>
+ <div class="photo-grid">
+  <div class="photo-card"><img id="photoOne" src="./images/photo1.jpg" alt="Our first memory"><span>My favourite memory ♥</span></div>
+  <div class="photo-card"><img id="photoTwo" src="./images/photo2.jpg" alt="Another special memory"><span>My Zoro, always ✨</span></div>
+ </div>
+ <div class="actions"><button class="btn" data-next="6">ONE MORE LITTLE SECRET →</button></div>
+</div></section>
+<section class="scene" id="s6"><div class="content">
+ <div class="eyebrow">Chapter 05 · A few of a million reasons</div><h2 class="grad">Why you're<br>so special</h2>
+ <div class="glass reason-card"><div class="reason-text" id="reasonText">Tap below. I have a few things to tell you…</div></div>
+ <div class="actions"><button class="btn" id="reasonBtn">REVEAL A REASON ♥</button><button class="btn ghost" data-next="7">NEXT SURPRISE →</button></div>
+</div></section>
+<section class="scene" id="s7"><div class="content">
+ <div class="eyebrow">Chapter 06 · Something is waiting</div><h2 class="grad">A tiny gift<br>for my Jaanan</h2>
+ <div class="gift-wrap" id="gift">🎁</div><p class="muted" id="giftHint">Tap the gift. Go on, it's yours.</p>
+ <div class="glass hidden" id="giftMessage"><h3>For you, my Zoro ♥</h3><p class="copy">If I could give you one thing, it would be the chance to see yourself through my eyes — so you could understand how precious you are to me.</p></div>
+ <div class="actions"><button class="btn" data-next="8">THE FINAL SURPRISE ✨</button></div>
+</div></section>
+<section class="scene" id="s8"><div class="content">
+ <div class="eyebrow">Chapter 07 · All the love in the universe</div><div class="cake">🎂</div>
+ <h1 class="grad final-title">Happy Birthday,<br>My Zoro!</h1><h2>My Jaanan ♥</h2>
+ <div class="glass"><p class="copy">Among billions of stars, you will always be my favourite one. May your days be full of laughter, your heart full of peace, and your life full of beautiful surprises.</p><h3 style="margin-top:15px">You are loved. Always.</h3></div>
+ <div class="actions"><button class="btn" id="celebrateBtn">MAKE IT SPARKLE AGAIN ✦</button><button class="btn ghost" id="replayBtn">REPLAY OUR STORY ↺</button></div>
+ <div class="footer-note">A LITTLE WORLD, MADE WITH ENDLESS LOVE</div>
+</div><div class="fireworks" id="fireworks"></div></section>
+</div>
+
+<div id="setup"><div class="setup-card">
+ <div class="eyebrow">Private setup · Before the surprise goes live</div>
+ <h2 class="grad">Add your two<br>special memories</h2>
+ <p class="copy" style="text-align:left;margin:12px 0">Choose exactly two photos. This page will prepare the files for your GitHub project. To make them visible to everyone, you must upload the downloaded files to your repository and publish them.</p>
+ <div class="uploads">
+  <div class="upload"><label for="file1">PHOTO 01</label><input id="file1" type="file" accept="image/*"><img class="preview" id="preview1" alt="Preview one"></div>
+  <div class="upload"><label for="file2">PHOTO 02</label><input id="file2" type="file" accept="image/*"><img class="preview" id="preview2" alt="Preview two"></div>
+ </div>
+ <div class="notice">Important: GitHub Pages cannot save browser uploads to your repository. This setup downloads the two photos and a small settings file. Upload them to GitHub as explained in README. No secret GitHub token is used in this website.</div>
+ <div class="actions"><button class="btn" id="prepareBtn">PREPARE MY TWO PHOTOS</button></div>
+ <p class="muted">After the files are committed to GitHub, the setup screen disappears for every visitor.</p>
+</div></div>
+<div id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+let current=1,reasonIndex=0,musicOn=false;
+const reasons=[
+ "Your smile can turn an ordinary day into my favourite one. ♥",
+ "The little things you do are the things I remember most.",
+ "You make the world feel softer and brighter.",
+ "Your happiness matters to me more than you know.",
+ "Because you are you, Nuralia. And that is more than enough."
+];
+function toast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",4500)}
+function go(n){
+ const old=$("s"+current),next=$("s"+n);
+ if(!old||!next||current===n)return;
+ old.classList.remove("active");old.classList.add("leaving");
+ setTimeout(()=>old.classList.remove("leaving"),550);
+ next.classList.add("active");current=n;
+ $("progress").style.width=(n/8*100)+"%";
+ if(n===8){fireworks();setTimeout(fireworks,900);setTimeout(fireworks,1800)}
+}
+document.querySelectorAll("[data-next]").forEach(b=>b.addEventListener("click",()=>go(Number(b.dataset.next))));
+$("envelope").addEventListener("click",()=>{
+ $("envelope").classList.add("open");$("letterHint").classList.add("hidden");$("letter").classList.add("show");
+});
+$("reasonBtn").addEventListener("click",()=>{
+ $("reasonText").textContent=reasons[reasonIndex%reasons.length];reasonIndex++;
+ $("reasonText").animate([{opacity:0,transform:"translateY(12px) scale(.96)"},{opacity:1,transform:"none"}],{duration:500,easing:"ease-out"});
+});
+$("gift").addEventListener("click",()=>{
+ $("gift").classList.add("open");$("giftHint").classList.add("hidden");$("giftMessage").classList.remove("hidden");confetti(55);
+});
+function confetti(count=30){
+ const colors=["#ff8cbd","#f4d49a","#d8b5ff","#fff1f8"];
+ for(let i=0;i<count;i++){
+  const el=document.createElement("i");el.style.cssText=`position:fixed;z-index:90;left:${Math.random()*100}vw;top:-15px;width:${5+Math.random()*6}px;height:${8+Math.random()*10}px;background:${colors[i%colors.length]};border-radius:3px;pointer-events:none;transform:rotate(${Math.random()*180}deg);`;
+  document.body.appendChild(el);const dx=(Math.random()-.5)*180,dy=window.innerHeight+80;
+  el.animate([{transform:"translate(0,0) rotate(0)",opacity:1},{transform:`translate(${dx}px,${dy}px) rotate(${Math.random()*900}deg)`,opacity:0}],{duration:2200+Math.random()*1800,easing:"cubic-bezier(.15,.7,.3,1)"});
+  setTimeout(()=>el.remove(),4300);
+ }
+}
+function fireworks(){
+ const host=$("fireworks");
+ for(let k=0;k<5;k++){
+  const x=10+Math.random()*80,y=12+Math.random()*65;
+  for(let i=0;i<18;i++){
+   const a=Math.PI*2*i/18,dist=35+Math.random()*65;
+   const p=document.createElement("i");p.className="burst";p.style.left=x+"%";p.style.top=y+"%";p.style.setProperty("--dx",Math.cos(a)*dist+"px");p.style.setProperty("--dy",Math.sin(a)*dist+"px");host.appendChild(p);setTimeout(()=>p.remove(),1500);
+  }
+ }
+ confetti(45);
+}
+$("celebrateBtn").addEventListener("click",fireworks);
+$("replayBtn").addEventListener("click",()=>{document.querySelectorAll(".scene").forEach(s=>s.classList.remove("active","leaving"));current=1;$("s1").classList.add("active");$("progress").style.width="12.5%";});
+$("musicBtn").addEventListener("click",async()=>{
+ const audio=$("bgMusic");
+ if(!musicOn){
+  try{await audio.play();musicOn=true;$("musicBtn").classList.add("playing");$("musicBtn").innerHTML='<span class="dot"></span> MUSIC ON';}
+  catch(e){toast("Music file nahi mili. Add music/song.mp3 to your GitHub project.");}
+ }else{audio.pause();musicOn=false;$("musicBtn").classList.remove("playing");$("musicBtn").innerHTML='<span class="dot"></span> MUSIC OFF';}
+});
+function downloadBlob(blob,name){const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+function previewFile(input,img){input.addEventListener("change",()=>{const f=input.files[0];if(!f)return;if(!f.type.startsWith("image/")){toast("Please choose an image file.");input.value="";return;}const url=URL.createObjectURL(f);img.src=url;img.style.display="block";});}
+previewFile($("file1"),$("preview1"));previewFile($("file2"),$("preview2"));
+$("prepareBtn").addEventListener("click",()=>{
+ const a=$("file1").files[0],b=$("file2").files[0];
+ if(!a||!b){toast("Please select both photos first.");return;}
+ if(!a.type.startsWith("image/")||!b.type.startsWith("image/")){toast("Both files must be images.");return;}
+ // Preserve original image bytes and use fixed filenames referenced by the site.
+ downloadBlob(a,"photo1.jpg");setTimeout(()=>downloadBlob(b,"photo2.jpg"),450);
+ const config={setupComplete:true,photoCount:2,photos:["photo1.jpg","photo2.jpg"]};
+ setTimeout(()=>downloadBlob(new Blob([JSON.stringify(config,null,2)],{type:"application/json"}),"config.json"),900);
+ toast("3 files prepared. Follow README to upload them into your GitHub repository.");
+});
+async function checkSetup(){
+ try{
+  const r=await fetch("./config.json?check="+Date.now(),{cache:"no-store"});
+  if(!r.ok)throw new Error("not configured");
+  const cfg=await r.json();
+  if(cfg.setupComplete===true&&cfg.photoCount===2){
+   $("setup").style.display="none";
+   $("photoOne").src="./images/photo1.jpg";
+   $("photoTwo").src="./images/photo2.jpg";
+   $("progress").style.width="12.5%";
+   return;
+  }
+ }catch(e){}
+ // Setup appears only while the public project has not yet been configured.
+ $("setup").style.display="flex";
+}
+checkSetup();
+</script>
+</body>
+</html>
