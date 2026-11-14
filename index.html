@@ -4,832 +4,415 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Noor Alia</title>
+<meta name="theme-color" content="#170b29">
+<title>For My Zoro ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap');
 
-:root {
-  --pink: #f5c5d3;
-  --deep: #a94e70;
-  --rose: #d98da7;
-  --gold: #c6a36b;
-  --cream: #fff9f8;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:#11091d;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  min-height:100vh;
 }
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  color: #603e4d;
-  background:
-    radial-gradient(circle at 20% 20%, #fff 0, transparent 35%),
-    linear-gradient(135deg, #fff6f8, #f7dce5, #fff8f3);
-  overflow: hidden;
+#stars{
+  position:fixed;inset:0;pointer-events:none;
+  background-image:
+  radial-gradient(white 1px,transparent 1px),
+  radial-gradient(#e9a6ff 1px,transparent 1px);
+  background-size:65px 65px,110px 110px;
+  background-position:0 0,30px 40px;
+  opacity:.35;
+  animation:stars 30s linear infinite;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
+@keyframes stars{to{background-position:300px 400px,200px 300px}}
+
+.heart{
+ position:fixed;bottom:-30px;left:var(--x);
+ color:#ff72b6;font-size:var(--s);
+ animation:float var(--t) linear forwards;
+ pointer-events:none;
+ z-index:5;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
 
-.scene {
-  display: none;
-  position: fixed;
-  inset: 0;
-  overflow-y: auto;
-  padding: 25px 18px 95px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  animation: appear .7s ease;
-  z-index: 2;
+.screen{
+ position:absolute;inset:0;
+ display:none;
+ align-items:center;justify-content:center;
+ flex-direction:column;
+ text-align:center;
+ padding:28px 22px;
+ overflow-y:auto;
+ background:radial-gradient(ellipse at top,#351342 0%,#190d29 48%,#100817 100%);
 }
 
-.scene.active { display: flex; }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+.screen.active{
+ display:flex;
+ animation:enter .8s cubic-bezier(.2,.8,.2,1);
+}
+.screen.exit{
+ animation:leave .45s ease forwards;
+}
+@keyframes enter{
+ from{opacity:0;transform:perspective(900px) rotateY(35deg) scale(.9)}
+ to{opacity:1;transform:perspective(900px) rotateY(0) scale(1)}
+}
+@keyframes leave{
+ to{opacity:0;transform:perspective(900px) rotateY(-35deg) scale(.9)}
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--deep);
+h1{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(35px,9vw,58px);
+ line-height:1.2;
+ color:#ffd5ec;
+ text-shadow:0 0 25px #f45bab80;
 }
-
-h1 {
-  font-size: clamp(2.4rem, 7vw, 4.5rem);
-  margin: 12px 0;
+h2{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(27px,7vw,39px);
+ color:#ffb6db;
+ margin-bottom:18px;
 }
-
-h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin: 10px 0 20px;
+p{
+ color:#f1d9ed;
+ font-size:15px;
+ line-height:1.9;
+ max-width:480px;
+ margin:14px auto;
 }
-
-p {
-  line-height: 1.8;
-  max-width: 650px;
-  font-size: 1rem;
+.small{
+ color:#d8b9d8;font-size:12px;letter-spacing:3px;
+ margin-bottom:20px;
 }
-
-.eyebrow {
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: .72rem;
-  font-weight: 600;
+button{
+ border:1px solid #ffb2d9;
+ background:linear-gradient(120deg,#e84e9a,#963dba);
+ color:white;
+ padding:15px 26px;
+ border-radius:40px;
+ font-size:14px;
+ font-family:inherit;
+ cursor:pointer;
+ margin:12px 5px;
+ box-shadow:0 0 25px #e84e9a45;
+ transition:.3s;
 }
-
-.btn {
-  border: 0;
-  border-radius: 40px;
-  padding: 13px 27px;
-  margin: 8px;
-  color: white;
-  background: linear-gradient(120deg, #b95f80, #df9db2);
-  box-shadow: 0 8px 20px #c77b9b45;
-  font-size: .9rem;
-  transition: .25s;
+button:active{transform:scale(.94)}
+button:hover{box-shadow:0 0 35px #f78bc8}
+.secondary{background:transparent}
+.progress{
+ position:fixed;top:17px;left:50%;
+ transform:translateX(-50%);
+ font-size:11px;letter-spacing:3px;
+ color:#eab8dc;z-index:10;
 }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px #b95f8045;
+.progressbar{
+ position:fixed;top:0;left:0;height:3px;
+ background:#ff80c3;width:0;z-index:10;
+ transition:.5s;
 }
-
-.btn.secondary {
-  background: white;
-  color: var(--deep);
-  border: 1px solid #e8bdcb;
+.envelope{
+ font-size:95px;cursor:pointer;
+ animation:pulse 1.5s infinite;
 }
-
-.navigation {
-  position: fixed;
-  bottom: 12px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-  pointer-events: none;
+@keyframes pulse{
+ 50%{transform:scale(1.1);filter:drop-shadow(0 0 20px #ff80c3)}
 }
-
-.navigation button {
-  pointer-events: auto;
+.letter{
+ background:#fff0f6;color:#64254b;
+ padding:25px;border-radius:15px;
+ max-width:440px;width:100%;
+ line-height:2;font-family:'Playfair Display',serif;
+ display:none;text-align:left;
+ box-shadow:0 0 40px #ff8ac355;
 }
+.letter p{color:#64254b;font-family:inherit}
 
-.progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0%;
-  background: var(--deep);
-  z-index: 30;
-  transition: width .4s;
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;width:100%;max-width:440px;
+ margin:15px auto;
 }
-
-.curtains {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  z-index: 50;
-  pointer-events: none;
+.photo{
+ background:#fff;padding:8px 8px 15px;
+ border-radius:5px;
+ transform:rotate(var(--r));
+ box-shadow:0 5px 20px #0008;
 }
-
-.curtain {
-  width: 50%;
-  height: 100%;
-  background:
-    repeating-linear-gradient(90deg, #a9446c 0 20px, #c25e84 21px 42px);
-  box-shadow: inset -12px 0 25px #68253f45;
-  transition: transform 2s cubic-bezier(.7,0,.2,1);
+.photo img{
+ width:100%;height:145px;object-fit:cover;
+ display:block;background:#3b2549;
 }
-
-.curtain.right {
-  background:
-    repeating-linear-gradient(90deg, #c25e84 0 20px, #a9446c 21px 42px);
+.photo span{
+ color:#74345b;font-family:'Playfair Display',serif;
+ font-size:13px;display:block;margin-top:9px;
 }
-
-.curtains.open .curtain.left { transform: translateX(-100%); }
-.curtains.open .curtain.right { transform: translateX(100%); }
-
-#openButton {
-  position: fixed;
-  z-index: 60;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  white-space: nowrap;
+.bigheart{font-size:85px;animation:pulse 1.4s infinite}
+.gift{font-size:100px;cursor:pointer;animation:pulse 1.5s infinite}
+.cake{font-size:100px;animation:pulse 1.3s infinite}
+.message{
+ background:#ffffff12;border:1px solid #ffffff20;
+ padding:22px;border-radius:18px;
+ max-width:440px;width:100%;
+ backdrop-filter:blur(10px);
 }
-
-.glass {
-  width: min(680px, 95%);
-  padding: 28px 22px;
-  background: #ffffffb8;
-  border: 1px solid #ffffff;
-  border-radius: 25px;
-  box-shadow: 0 15px 45px #9d597522;
-  backdrop-filter: blur(12px);
+#musicBtn{
+ position:fixed;right:12px;top:12px;
+ padding:9px 13px;font-size:12px;
+ z-index:20;margin:0;
 }
-
-.envelope {
-  font-size: 110px;
-  cursor: pointer;
-  transition: .4s;
-  display: inline-block;
-}
-
-.envelope:hover { transform: scale(1.1) rotate(-5deg); }
-
-.letter-content {
-  display: none;
-  text-align: left;
-  background: #fff9f7;
-  padding: 22px;
-  border-radius: 16px;
-  margin-top: 15px;
-}
-
-.letter-content.show { display: block; }
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.photo-frame {
-  width: min(320px, 85vw);
-  height: 330px;
-  border: 9px solid white;
-  border-radius: 16px;
-  background: #f5e0e7;
-  box-shadow: 0 10px 30px #80425a22;
-  overflow: hidden;
-  position: relative;
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.photo-frame span {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  color: #89546a;
-}
-
-.gifts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(120px, 190px));
-  gap: 18px;
-  justify-content: center;
-  margin: 20px auto;
-}
-
-.gift {
-  min-height: 150px;
-  border: 1px solid #f0cfda;
-  border-radius: 20px;
-  background: #fff;
-  color: var(--deep);
-  padding: 18px 10px;
-  font-size: 1rem;
-  box-shadow: 0 8px 20px #b66b8520;
-  transition: .3s;
-}
-
-.gift:hover { transform: translateY(-5px) rotate(2deg); }
-
-.gift .emoji {
-  display: block;
-  font-size: 45px;
-  margin-bottom: 10px;
-}
-
-.giftMessage {
-  display: none;
-  margin: 10px auto;
-  max-width: 500px;
-  background: white;
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 8px 25px #b66b8520;
-}
-
-.giftMessage.show { display: block; }
-
-.quiz-option {
-  display: block;
-  width: min(400px, 90%);
-  padding: 13px;
-  margin: 10px auto;
-  border: 1px solid #e9bdcb;
-  border-radius: 14px;
-  background: white;
-  color: var(--deep);
-}
-
-.quiz-option:hover { background: #fbe8ef; }
-
-#quizFeedback {
-  min-height: 35px;
-  font-weight: 600;
-}
-
-.cake {
-  font-size: clamp(100px, 25vw, 170px);
-  animation: cakeFloat 2s infinite ease-in-out;
-}
-
-@keyframes cakeFloat {
-  50% { transform: translateY(-10px); }
-}
-
-.candle {
-  font-size: 45px;
-  animation: flicker .8s infinite alternate;
-}
-
-@keyframes flicker {
-  from { opacity: .65; transform: scale(.95); }
-  to { opacity: 1; transform: scale(1.08); }
-}
-
-.final-title {
-  font-size: clamp(2.7rem, 9vw, 5.5rem);
-  background: linear-gradient(90deg, #a94e70, #d5a45f, #a94e70);
-  color: transparent;
-  background-clip: text;
-}
-
-.petals {
-  position: fixed;
-  top: -30px;
-  z-index: 8;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to { transform: translateY(110vh) rotate(700deg); opacity: 0; }
-}
-
-.music-control {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  z-index: 40;
-  border: 1px solid #e8bdcb;
-  background: #ffffffd9;
-  border-radius: 30px;
-  padding: 10px 15px;
-  color: var(--deep);
-}
-
-@media(max-width:520px) {
-  .glass { padding: 22px 15px; }
-  .photo-frame { height: 280px; }
-  .gifts { gap: 10px; }
-  .gift { min-height: 130px; }
-  p { font-size: .92rem; }
+#nextReason{min-height:70px}
+@media(max-width:380px){
+ .screen{padding:24px 15px}
+ .photo img{height:115px}
+ button{padding:13px 20px}
 }
 </style>
 </head>
 
 <body>
+<div id="stars"></div>
+<div class="progressbar" id="bar"></div>
+<div class="progress" id="progress">01 / 08</div>
 
-<div class="progress" id="progress"></div>
+<button id="musicBtn" onclick="toggleMusic()">♫ Music OFF</button>
+<audio id="music" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
 
-<button class="music-control" id="musicButton" onclick="toggleMusic()">
-  ♫ Music: Off
-</button>
+<!-- SCREEN 1 -->
+<section class="screen active" id="s1">
+ <div class="small">A LITTLE WORLD MADE FOR YOU</div>
+ <div class="bigheart">💗</div>
+ <h1>Hey Nuralia...</h1>
+ <p>Someone has prepared a little surprise for someone very special.</p>
+ <p>And that someone is YOU. ❤️</p>
+ <button onclick="next(2)">Open Your Surprise ✨</button>
+</section>
 
-<div class="curtains" id="curtains">
-  <div class="curtain left"></div>
-  <div class="curtain right"></div>
-</div>
+<!-- SCREEN 2 -->
+<section class="screen" id="s2">
+ <div class="small">WELCOME TO YOUR UNIVERSE</div>
+ <h1>Welcome,<br>My Zoro ❤️</h1>
+ <p>Today, the whole little universe is celebrating you.</p>
+ <p>Every little surprise here is made with love.</p>
+ <button onclick="next(3)">Let's Begin 💕</button>
+</section>
 
-<button class="btn" id="openButton" onclick="startExperience()">
-  ✨ OPEN YOUR SURPRISE ✨
-</button>
+<!-- SCREEN 3 -->
+<section class="screen" id="s3">
+ <div class="small">A VERY SPECIAL DAY</div>
+ <div style="font-size:80px">🎂</div>
+ <h1>17 November</h1>
+ <h2>The Day My Favourite Person Was Born</h2>
+ <p>2000 — The world became a little more beautiful.</p>
+ <button onclick="next(4)">A Letter For You 💌</button>
+</section>
 
-<div class="scene active" id="scene0">
-  <div class="glass">
-    <div class="eyebrow">A special day is here</div>
-    <h1>For Noor Alia</h1>
-    <p>A little world of flowers, memories and beautiful surprises has been prepared just for you.</p>
-    <p>Are you ready?</p>
-    <button class="btn" onclick="go(1)">Begin the journey ♡</button>
+<!-- SCREEN 4 -->
+<section class="screen" id="s4">
+ <div class="small">SOMETHING FROM MY HEART</div>
+ <h2>A Secret Letter</h2>
+ <div class="envelope" onclick="openLetter()">💌</div>
+ <p id="letterHint">Tap the envelope to open your letter.</p>
+ <div class="letter" id="letter">
+  <h2>My Dearest Nuralia ❤️</h2>
+  <p>
+   I don't know how to put all my feelings into words,
+   but I want you to know how special you are to me.
+   <br><br>
+   Your smile makes ordinary days beautiful.
+   Your presence makes everything feel brighter.
+   <br><br>
+   My Zoro, My Jaanan, you deserve every beautiful
+   thing this world has to offer.
+   <br><br>
+   Happy Birthday, my favourite person.
+   <br><br>
+   With endless love. ❤️
+  </p>
+ </div>
+ <button onclick="next(5)">Our Memories 📸</button>
+</section>
+
+<!-- SCREEN 5 -->
+<section class="screen" id="s5">
+ <div class="small">LITTLE MOMENTS, BIG MEMORIES</div>
+ <h2>Our Beautiful Memories</h2>
+ <p>Every picture has a little story. ❤️</p>
+ <div class="gallery">
+  <div class="photo" style="--r:-3deg">
+   <img src="images/photo1.jpg" alt="Memory 1">
+   <span>My Favourite Smile ❤️</span>
   </div>
-</div>
-
-<div class="scene" id="scene1">
-  <div class="eyebrow">A little secret</div>
-  <h2>A Letter Just For You</h2>
-  <div class="envelope" onclick="openEnvelope()">💌</div>
-  <p>Tap the envelope to open your special message.</p>
-  <div class="glass letter-content" id="envelopeMessage">
-    <h2>Dear Noor Alia,</h2>
-    <p>Some days deserve a little extra sparkle. Today is one of those days. May your day be full of happiness, kindness and wonderful memories.</p>
-    <p>With warm wishes, always. ♡</p>
+  <div class="photo" style="--r:3deg">
+   <img src="images/photo2.jpg" alt="Memory 2">
+   <span>Beautiful Moments</span>
   </div>
-  <button class="btn" onclick="go(2)">Continue →</button>
-</div>
-
-<div class="scene" id="scene2">
-  <div class="eyebrow">Today is all about you</div>
-  <h1>Happy Birthday,<br>Noor Alia!</h1>
-  <div style="font-size:65px">🌸 🌷 🌸</div>
-  <p>May your new year bring beautiful opportunities, peaceful moments, laughter and countless reasons to smile.</p>
-  <button class="btn" onclick="go(3)">See Our Memories →</button>
-</div>
-
-<div class="scene" id="scene3">
-  <div class="eyebrow">Little moments, lovely memories</div>
-  <h2>Memory Gallery</h2>
-  <p>Two photographs, two special frames in this little birthday celebration.</p>
-
-  <div class="gallery">
-    <div class="photo-frame">
-      <img src="images/photo1.jpg" alt="Memory photo one"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-      <span style="display:none">📷<br>Add images/photo1.jpg</span>
-    </div>
-    <div class="photo-frame">
-      <img src="images/photo2.jpg" alt="Memory photo two"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-      <span style="display:none">📷<br>Add images/photo2.jpg</span>
-    </div>
+  <div class="photo" style="--r:2deg">
+   <img src="images/photo3.jpg" alt="Memory 3">
+   <span>My Zoro 💗</span>
   </div>
-
-  <div>
-    <button class="btn secondary" onclick="changePhotos(-1)">← Previous</button>
-    <button class="btn secondary" onclick="changePhotos(1)">Next →</button>
+  <div class="photo" style="--r:-2deg">
+   <img src="images/photo4.jpg" alt="Memory 4">
+   <span>Forever Special</span>
   </div>
-  <p id="photoCaption">Beautiful moments deserve to be remembered.</p>
-  <button class="btn" onclick="go(4)">Discover Your Gifts →</button>
-</div>
+ </div>
+ <button onclick="next(6)">One More Surprise 💕</button>
+</section>
 
-<div class="scene" id="scene4">
-  <div class="eyebrow">Four little surprises</div>
-  <h2>Mystery Gift Boxes</h2>
-  <p>Choose each gift box and discover its hidden message.</p>
+<!-- SCREEN 6 -->
+<section class="screen" id="s6">
+ <div class="small">A LITTLE SECRET</div>
+ <h2>Reasons Why I Love You</h2>
+ <div class="bigheart">💖</div>
+ <div class="message" id="nextReason">
+  Tap the heart button to discover a reason.
+ </div>
+ <button onclick="reason()">Reveal A Reason ❤️</button>
+ <button onclick="next(7)">Next Surprise 🎁</button>
+</section>
 
-  <div class="gifts">
-    <button class="gift" onclick="openGift(0)">
-      <span class="emoji">🎁</span>Gift One
-    </button>
-    <button class="gift" onclick="openGift(1)">
-      <span class="emoji">🎀</span>Gift Two
-    </button>
-    <button class="gift" onclick="openGift(2)">
-      <span class="emoji">💝</span>Gift Three
-    </button>
-    <button class="gift" onclick="openGift(3)">
-      <span class="emoji">🌹</span>Gift Four
-    </button>
-  </div>
+<!-- SCREEN 7 -->
+<section class="screen" id="s7">
+ <div class="small">A GIFT FROM MY HEART</div>
+ <h2>Something Special For You</h2>
+ <div class="gift" onclick="openGift()">🎁</div>
+ <p id="giftText">Tap the gift box to unwrap your surprise.</p>
+ <button onclick="next(8)">The Final Surprise ✨</button>
+</section>
 
-  <div class="giftMessage" id="giftMessage">
-    <h2 id="giftTitle">A surprise!</h2>
-    <p id="giftText"></p>
-  </div>
-
-  <button class="btn" onclick="go(5)">Next Surprise →</button>
-</div>
-
-<div class="scene" id="scene5">
-  <div class="eyebrow">Let's have some fun</div>
-  <h2>Birthday Quiz ✨</h2>
-  <p id="quizQuestion">Which flower is often associated with love and affection?</p>
-  <div id="quizOptions"></div>
-  <p id="quizFeedback"></p>
-  <button class="btn" id="quizNext" onclick="nextQuestion()" style="display:none">Next Question →</button>
-  <button class="btn" id="quizFinish" onclick="go(6)" style="display:none">Continue →</button>
-</div>
-
-<div class="scene" id="scene6">
-  <div class="eyebrow">Make a beautiful wish</div>
-  <h2>Your Birthday Cake</h2>
-  <div class="candle">🕯️ 🕯️ 🕯️</div>
-  <div class="cake" id="cake">🎂</div>
-  <p>Three candles, one special wish. Take a moment and make your wish!</p>
-  <button class="btn" id="wishButton" onclick="makeWish()">Make Your Wish ✨</button>
-  <p id="wishMessage"></p>
-  <button class="btn" onclick="go(7)">Read Your Letter →</button>
-</div>
-
-<div class="scene" id="scene7">
-  <div class="eyebrow">A few words from the heart</div>
-  <h2>A Birthday Letter</h2>
-  <div class="glass">
-    <p style="text-align:left">
-      Dear Noor Alia,<br><br>
-      Today is a beautiful reminder of how special a new beginning can be.
-      I hope the coming year brings you happiness, strength, good health
-      and success in everything you work towards.<br><br>
-      Keep believing in your dreams. Keep finding joy in little things.
-      May you always have kind people around you and countless moments
-      worth remembering.<br><br>
-      Thank you for being part of so many lovely memories.
-      May this birthday be the beginning of an amazing chapter.<br><br>
-      With warmest wishes,<br>
-      Always cheering for you. ♡
-    </p>
-  </div>
-  <button class="btn" onclick="go(8)">One Last Surprise →</button>
-</div>
-
-<div class="scene" id="scene8">
-  <div class="eyebrow">The final surprise</div>
-  <div style="font-size:70px">🌸 🎆 🌹</div>
-  <h1 class="final-title">Happy Birthday,<br>My Zoro!</h1>
-  <p>May your days be bright, your dreams grow bigger, and your heart always find reasons to be happy.</p>
-  <h2>With lots of warm wishes ♡</h2>
-  <div style="font-size:50px">🎂 💐 ✨</div>
-  <button class="btn" onclick="celebrate()">Celebrate Again 🎉</button>
-  <button class="btn secondary" onclick="restart()">Start Again ↺</button>
-</div>
-
-<div class="navigation">
-  <button class="btn secondary" id="backButton" onclick="go(-1)">← Back</button>
-  <button class="btn" id="nextButton" onclick="go(1)">Next →</button>
-</div>
+<!-- SCREEN 8 -->
+<section class="screen" id="s8">
+ <div class="small">TODAY IS ALL ABOUT YOU</div>
+ <div class="cake">🎂</div>
+ <h1>Happy Birthday<br>My Zoro! ❤️</h1>
+ <h2>My Jaanan 💗</h2>
+ <div class="message">
+  <p>
+   Among billions of stars, you will always be
+   my favourite one.
+  </p>
+  <p>
+   May your life always be filled with happiness,
+   laughter, love and beautiful moments.
+  </p>
+  <h2>Forever Special ❤️</h2>
+  <p>Made with endless love, just for you.</p>
+ </div>
+ <button onclick="celebrate()">Celebrate Again 🎉</button>
+</section>
 
 <script>
-let currentScene = 0;
-const totalScenes = 9;
+let current=1;
+const total=8;
 
-function showScene(number) {
-  if (number < 0 || number >= totalScenes) return;
+function next(n){
+ const old=document.getElementById('s'+current);
+ old.classList.add('exit');
 
-  currentScene = number;
-
-  document.querySelectorAll('.scene').forEach(scene => {
-    scene.classList.remove('active');
-  });
-
-  document.getElementById('scene' + number).classList.add('active');
-
-  document.getElementById('progress').style.width =
-    ((number + 1) / totalScenes * 100) + '%';
-
-  document.getElementById('backButton').style.display =
-    number === 0 ? 'none' : 'inline-block';
-
-  document.getElementById('nextButton').style.display =
-    [0,1,2,4,5,6,7,8].includes(number) ? 'none' : 'inline-block';
-
-  if (number === 5) renderQuestion();
-
+ setTimeout(()=>{
+  old.classList.remove('active','exit');
+  current=n;
+  document.getElementById('s'+current).classList.add('active');
+  document.getElementById('progress').textContent=
+    String(current).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+  document.getElementById('bar').style.width=
+    (current/total*100)+'%';
   window.scrollTo(0,0);
+ },350);
 }
 
-function go(number) {
-  if (number === -1) {
-    showScene(currentScene - 1);
-  } else if (number === 1) {
-    showScene(currentScene + 1);
-  } else {
-    showScene(number);
-  }
+function openLetter(){
+ document.getElementById('letter').style.display='block';
+ document.getElementById('letterHint').style.display='none';
 }
 
-function startExperience() {
-  document.getElementById('openButton').style.display = 'none';
-  document.getElementById('curtains').classList.add('open');
-  startMusic();
-  setTimeout(() => {
-    document.getElementById('curtains').style.display = 'none';
-    showScene(0);
-  }, 1900);
-}
-
-function openEnvelope() {
-  document.getElementById('envelopeMessage').classList.add('show');
-}
-
-/* Music: original ambient notes generated by the browser */
-let audioContext = null;
-let musicTimer = null;
-let musicOn = false;
-let noteIndex = 0;
-
-const melody = [
-  [261.63, 329.63, 392.00],
-  [293.66, 349.23, 440.00],
-  [261.63, 329.63, 392.00],
-  [220.00, 293.66, 349.23],
-  [246.94, 329.63, 392.00],
-  [293.66, 349.23, 440.00]
+const reasons=[
+ "Your beautiful smile makes my day. ❤️",
+ "Your cute little expressions. 🥹",
+ "The happiness you bring into my life. 💗",
+ "The way you make ordinary moments special. ✨",
+ "Simply because you are YOU, Nuralia. ❤️",
+ "You are my favourite person. 🌹"
 ];
+let reasonIndex=0;
 
-function playChord() {
-  if (!audioContext || !musicOn) return;
-
-  const chord = melody[noteIndex % melody.length];
-  noteIndex++;
-
-  chord.forEach((frequency, index) => {
-    const oscillator = audioContext.createOscillator();
-    const gain = audioContext.createGain();
-
-    oscillator.type = 'sine';
-    oscillator.frequency.value = frequency;
-
-    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(
-      index === 0 ? 0.035 : 0.018,
-      audioContext.currentTime + 0.5
-    );
-    gain.gain.exponentialRampToValueAtTime(
-      0.0001,
-      audioContext.currentTime + 3
-    );
-
-    oscillator.connect(gain);
-    gain.connect(audioContext.destination);
-
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 3.1);
-  });
+function reason(){
+ const box=document.getElementById('nextReason');
+ if(reasonIndex<reasons.length){
+  box.textContent=reasons[reasonIndex++];
+ }else{
+  box.textContent="And a million more reasons... I love you! ❤️";
+ }
+ box.animate([
+  {opacity:0,transform:'scale(.8)'},
+  {opacity:1,transform:'scale(1)'}
+ ],{duration:500});
 }
 
-function startMusic() {
-  if (musicOn) return;
-
-  try {
-    const AudioClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioClass) {
-      document.getElementById('musicButton').textContent = 'Music unavailable';
-      return;
-    }
-
-    if (!audioContext) audioContext = new AudioClass();
-    audioContext.resume();
-
-    musicOn = true;
-    playChord();
-    musicTimer = setInterval(playChord, 2800);
-    document.getElementById('musicButton').textContent = '♫ Music: On';
-  } catch (error) {
-    document.getElementById('musicButton').textContent = 'Music unavailable';
-  }
+function openGift(){
+ document.getElementById('giftText').innerHTML=
+ "Surprise, My Zoro! ❤️<br><br>If I could gift you one thing, it would be the ability to see yourself through my eyes. Then you would understand how precious you are to me. 💗";
+ confetti();
 }
 
-function stopMusic() {
-  musicOn = false;
-  clearInterval(musicTimer);
-  document.getElementById('musicButton').textContent = '♫ Music: Off';
+function confetti(){
+ for(let i=0;i<35;i++){
+  let el=document.createElement('div');
+  el.textContent=['💗','✨','❤️','🎉'][Math.floor(Math.random()*4)];
+  el.className='heart';
+  el.style.setProperty('--x',Math.random()*100+'vw');
+  el.style.setProperty('--s',(15+Math.random()*22)+'px');
+  el.style.setProperty('--t',(3+Math.random()*3)+'s');
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),6500);
+ }
 }
 
-function toggleMusic() {
-  if (musicOn) stopMusic();
-  else startMusic();
+function celebrate(){
+ confetti();
+ next(1);
 }
 
-/* Gallery */
-let photoIndex = 0;
-const photoCaptions = [
-  'Beautiful moments deserve to be remembered.',
-  'A little memory, a lot of happiness.'
-];
+setInterval(()=>{
+ if(Math.random()>.45){
+  let el=document.createElement('div');
+  el.className='heart';
+  el.textContent='♥';
+  el.style.setProperty('--x',Math.random()*100+'vw');
+  el.style.setProperty('--s',(12+Math.random()*20)+'px');
+  el.style.setProperty('--t',(5+Math.random()*5)+'s');
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),10000);
+ }
+},1200);
 
-function changePhotos(direction) {
-  photoIndex = (photoIndex + direction + 2) % 2;
-
-  const frames = document.querySelectorAll('.photo-frame');
-  frames.forEach((frame, index) => {
-    frame.style.transform =
-      `scale(${index === photoIndex ? 1.03 : .97})`;
-  });
-
-  document.getElementById('photoCaption').textContent =
-    photoCaptions[photoIndex];
+let playing=false;
+function toggleMusic(){
+ const audio=document.getElementById('music');
+ if(!playing){
+  audio.play().then(()=>{
+   playing=true;
+   document.getElementById('musicBtn').textContent='♫ Music ON';
+  }).catch(()=>alert('Please add music/song.mp3 to your GitHub project.'));
+ }else{
+  audio.pause();
+  playing=false;
+  document.getElementById('musicBtn').textContent='♫ Music OFF';
+ }
 }
-
-/* Automatic gallery movement */
-setInterval(() => {
-  if (currentScene === 3) changePhotos(1);
-}, 4000);
-
-/* Gifts */
-const gifts = [
-  {
-    title: 'A Gift of Happiness 🌸',
-    message: 'May your life always have little moments that make you smile.'
-  },
-  {
-    title: 'A Gift of Success ✨',
-    message: 'May your hard work bring you closer to every dream you have.'
-  },
-  {
-    title: 'A Gift of Peace 🕊️',
-    message: 'May your heart always find calm, comfort and beautiful days.'
-  },
-  {
-    title: 'A Gift of Memories 🌹',
-    message: 'May the coming year give you many memories worth keeping.'
-  }
-];
-
-function openGift(index) {
-  document.getElementById('giftTitle').textContent = gifts[index].title;
-  document.getElementById('giftText').textContent = gifts[index].message;
-  document.getElementById('giftMessage').classList.add('show');
-}
-
-/* Quiz */
-const questions = [
-  {
-    question: 'Which flower is often associated with love and affection?',
-    options: ['Rose', 'Cactus', 'Sunflower'],
-    answer: 0
-  },
-  {
-    question: 'What do we usually make before blowing birthday candles?',
-    options: ['A wish', 'A shopping list', 'A homework plan'],
-    answer: 0
-  },
-  {
-    question: 'Which is the best birthday gift?',
-    options: ['Kindness and good memories', 'A broken clock', 'An empty box'],
-    answer: 0
-  }
-];
-
-let questionIndex = 0;
-let quizScore = 0;
-let questionAnswered = false;
-
-function renderQuestion() {
-  questionAnswered = false;
-
-  const question = questions[questionIndex];
-  document.getElementById('quizQuestion').textContent =
-    question.question;
-
-  document.getElementById('quizFeedback').textContent = '';
-  document.getElementById('quizNext').style.display = 'none';
-  document.getElementById('quizFinish').style.display = 'none';
-
-  const options = document.getElementById('quizOptions');
-  options.innerHTML = '';
-
-  question.options.forEach((option, index) => {
-    const button = document.createElement('button');
-    button.className = 'quiz-option';
-    button.textContent = option;
-    button.onclick = () => answerQuestion(index);
-    options.appendChild(button);
-  });
-}
-
-function answerQuestion(index) {
-  if (questionAnswered) return;
-  questionAnswered = true;
-
-  const correct = questions[questionIndex].answer === index;
-
-  if (correct) {
-    quizScore++;
-    document.getElementById('quizFeedback').textContent =
-      'Correct! Well done! ✨';
-  } else {
-    document.getElementById('quizFeedback').textContent =
-      'Nice try! Every answer is part of the fun. ♡';
-  }
-
-  const buttons = document.querySelectorAll('.quiz-option');
-  buttons.forEach(button => button.disabled = true);
-
-  if (questionIndex < questions.length - 1) {
-    document.getElementById('quizNext').style.display = 'inline-block';
-  } else {
-    document.getElementById('quizFinish').textContent =
-      'Finish Quiz (' + quizScore + '/' + questions.length + ') →';
-    document.getElementById('quizFinish').style.display = 'inline-block';
-  }
-}
-
-function nextQuestion() {
-  questionIndex++;
-  renderQuestion();
-}
-
-/* Birthday cake */
-function makeWish() {
-  document.getElementById('cake').textContent = '🎂✨';
-  document.getElementById('wishMessage').textContent =
-    'May your beautiful wish find its way to reality. Happy Birthday! 💖';
-
-  document.getElementById('wishButton').textContent = 'Wish Made ✓';
-  celebrate();
-}
-
-/* Falling petals */
-function createPetal() {
-  const petal = document.createElement('div');
-  const flowers = ['🌸', '🌷', '💮', '🌹', '✨'];
-
-  petal.className = 'petals';
-  petal.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-  petal.style.left = Math.random() * 100 + 'vw';
-  petal.style.animationDuration = (5 + Math.random() * 5) + 's';
-  petal.style.fontSize = (14 + Math.random() * 17) + 'px';
-
-  document.body.appendChild(petal);
-  setTimeout(() => petal.remove(), 11000);
-}
-
-setInterval(createPetal, 500);
-
-/* Celebration */
-function celebrate() {
-  for (let i = 0; i < 35; i++) {
-    setTimeout(createPetal, i * 55);
-  }
-}
-
-/* Restart */
-function restart() {
-  questionIndex = 0;
-  quizScore = 0;
-  photoIndex = 0;
-  questionAnswered = false;
-
-  document.getElementById('giftMessage').classList.remove('show');
-  document.getElementById('envelopeMessage').classList.remove('show');
-  document.getElementById('wishMessage').textContent = '';
-  document.getElementById('wishButton').textContent = 'Make Your Wish ✨';
-  document.getElementById('cake').textContent = '🎂';
-
-  document.getElementById('curtains').style.display = 'flex';
-  document.getElementById('curtains').classList.remove('open');
-  document.getElementById('openButton').style.display = 'block';
-
-  stopMusic();
-  showScene(0);
-}
-
-showScene(0);
 </script>
-
 </body>
 </html>
